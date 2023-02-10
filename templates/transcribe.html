@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Audio Transcription Result</title>
+  </head>
+  <body>
+    <h1>Audio Transcription Result</h1>
+    <div class="card">
+      <p class="transcribed-text">{{ transcribed_text }}</p>
+    </div>
+    <textarea id="text-to-copy" style="display: none;">{result['text']}</textarea>
+        <button id="transcribe-another-file" class="btn">Transcribe another file</button>
+    <button id="copy-text" class="btn">Copy text</button>
+  </body>
+</html>
+

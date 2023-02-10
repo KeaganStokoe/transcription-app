@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Audio Transcription</title>
+    <script>
+      function showSpinner() {
+        document.getElementById("spinner").style.display = "block";
+      }
+      function hideSpinner() {
+        document.getElementById("spinner").style.display = "none";
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Audio Transcription</h1>
+    <form action="/transcribe" method="post" enctype="multipart/form-data" onsubmit="showSpinner()">
+      <input type="file" name="audio_file">
+      <input id="submit-btn" type="submit" value="Convert">
+    </form>
+    <p id="spinner" style="display:none;">Transcribing... This will take a few seconds ⏱️</p>
+  </body>
+</html>
